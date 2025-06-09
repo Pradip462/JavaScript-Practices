@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;;
+        }
+    </style>
+</head>
+<body>
+    <div class="language">
+        <li>Javascript</li>
+    </div>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Python');
+    addLanguage('Java');
+
+
+    function addOptiLang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);    
+    }
+    addOptiLang('Golang');
+
+    //Edit or changing the content of an element
+    //Normal method to edit
+    const firstlang = document.querySelector('li:nth-child(1)');
+    firstlang.innerHTML = 'C++';
+
+
+    //optimized method to edit
+    const secondLang = document.querySelector('li:nth-child(2)');
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Mojo';
+    secondLang.replaceWith(newLi);
+
+    //replace c++ with typescript
+    const firstlang2 = document.querySelector('li:nth-child(1)');
+    const newLi2 = document.createElement('li');
+    newLi2.innerHTML = 'Typescript';
+    firstlang2.replaceWith(newLi2);
+
+    //or
+    const firstlang3 = document.querySelector('li:first-child');
+    firstlang3.outerHTML = '<li>JavaScript</li>';
+    
+
+    //Remove
+    //let us remove golang
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+    
+</script>
+</html>

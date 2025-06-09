@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //Creating a div element
+        const div = document.createElement('div');
+        //adding properties like id,class
+        div.className = 'main';
+        div.id = Math.round(Math.random()*10+1);
+        //preferable to use setAttribute because it is more readable
+        div.setAttribute("title","Generated title");
+        div.style.backgroundCOlor = "green";
+        div.style.padding = "12px";
+        //not preferable it overrides the existing value
+        div.innerText = "Chai aaur code2";
+        //now created a div that is in memeory but not in the DOM 
+        //we need to get it on document
+        const addText = document.createTextNode("Chai aaur code");
+        div.appendChild(addText);
+        document.body.appendChild(div);
+
+    </script>
+</body>
+</html>

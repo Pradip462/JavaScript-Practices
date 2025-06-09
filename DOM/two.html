@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning Continues</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednessday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <script>
+        //Select Perent element
+        const parent = document.querySelector('.parent');
+        console.log(parent);
+
+        //it returns HTML Collections
+        console.log(parent.children);
+
+        //returns the second child element
+        console.log(parent.children[1]);
+
+        //returns the text content of the second child element
+        console.log(parent.children[1].innerHTML); 
+
+        //returns the text content of all child elements by iterating through the HTML Collection
+        for(let i = 0;i < parent.children.length ; i++){
+            console.log(parent.children[i].innerHTML);
+        }
+
+        //Change the text content of the first child element
+        parent.children[0].style.color = 'blue';
+
+        //Getting the first element child 
+        console.log(parent.firstElementChild);
+
+        //getting last element child
+        console.log(parent.lastElementChild);
+
+        //Getting the first child element
+        const dayOne = document.querySelector('.day');
+        console.log(dayOne);
+
+        //Getting the parent element of the first child element
+        console.log(dayOne.parentElement);
+
+        //Getting the next sibling element of the first child element
+        console.log(dayOne.nextElementSibling);
+
+        //it returns a nodelist
+        console.log("Nodes:",parent.childNodes);
+        //it returns a nodelist of text nodes
+        //it returns a nodelist of 9 nodes because of the text nodes between the elements
+        //it also count the element and text nodes
+
+    </script>
+</body>
+</html>
